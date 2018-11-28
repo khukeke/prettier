@@ -1,27 +1,26 @@
 var path = require('path');
-
-
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: __dirname + "/App.js",
+    entry: "./src/index.js",
     output: {
-        path: __dirname + "/public",
-        filename: 'bundle.js'
+        // path: __dirname + "/public",
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, './dist'),
     },
     devServer: {
-        contentBase: path.join(__dirname, './public'),
+        contentBase: './',
         compress: true,
-        inline: true,
-        port: 9000
+        port: 9000,
+        hot: true
     },
-    resolve: {
-        extensions: ['*', '.js', '.jsx']
-    },
+    mode: 'development',
     module: {
         rules: [{
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
-                loader: 'babel-loader'
+                loader: 'babel-loader',
             }
         }, {
             test: /\.(png|jpg|gif)$/,
@@ -33,13 +32,19 @@ module.exports = {
             test: /\.(html)$/,
             use: [{
                 loader: 'html-loader',
-                options: {
-                    attrs: [':data-src']
-                }
             }]
         }, {
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
         }]
-    }
+    },
+    plugins: [
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'ohaha',
+            template: './public/template.html',
+            inject: 'body'
+        })
+    ]
 }
