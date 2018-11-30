@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -35,7 +38,10 @@ module.exports = {
             }]
         }, {
             test: /\.css$/,
-            use: ['style-loader', 'css-loader']
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: 'css-loader'
+            })
         }]
     },
     plugins: [
@@ -43,8 +49,9 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             title: 'ohaha',
-            template: './public/template.html',
+            template: './public/template.ejs',
             inject: 'body'
-        })
+        }),
+        new ExtractTextPlugin("./src/style/style.css")
     ]
 }

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import '../style/index.css';
 
 class Table extends Component {
     render() {
-        return <div>
+        return <div className="showRed">
             oopsdddd;
         </div>;
     }
