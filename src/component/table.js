@@ -6,7 +6,7 @@ class Table extends Component {
     super(props);
     }
     render() {
-        return <div className="showRed">oopsdddd;</div>;
+    return <div className="showRed">oopsdddd;</div>;
     }
 }
 export default Table;
