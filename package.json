@@ -14,17 +14,16 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "lint": "eslint src/component/*.js",
         "server": "webpack-dev-server --open",
+        "lint": "eslint src/component/*.js",
         "precommit": "lint-staged"
     },
     "pre-commit": [
-        "precommit",
         "lint"
     ],
     "lint-staged": {
         "**/*.{js,json,css,less,scss,md}": [
-            "prettier",
+            "prettier --write",
             "git add"
         ],
         "src/**/*.js": [
