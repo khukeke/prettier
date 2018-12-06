@@ -15,11 +15,9 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint": "eslint src/component/*.js --fix",
-        "server": "webpack-dev-server --open",
-        "precommit": "lint-staged"
+        "server": "webpack-dev-server --open"
     },
     "pre-commit": [
-        "precommit",
         "lint"
     ],
     "lint-staged": {
