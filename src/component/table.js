@@ -7,7 +7,8 @@ class Table extends Component {
         this.state = {};
     }
     render() {
-        return (<div className="showRed">
+        return (
+            <div className="showRed">
                 <button>Hello</button>
             </div>
         );
