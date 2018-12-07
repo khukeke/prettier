@@ -8,18 +8,9 @@ class Table extends Component {
             count: 0,
             flag: true,
             arr: [
-                {
-                    name: 'jack',
-                    age: 11
-                },
-                {
-                    name: 'tom',
-                    age: 23
-                },
-                {
-                    name: 'susie',
-                    age: 21
-                }
+                {name: 'jack', age: 11},
+                {name: 'tom', age: 23},
+                {name: 'susie', age: 21}
             ]
         };
     }

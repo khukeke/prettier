@@ -7,8 +7,6 @@ module.exports = {
     },
     extends: [
         'plugin:react/recommended',
-        'plugin:prettier/recommended',
-        'prettier/react'
     ],
     parserOptions: {
         ecmaVersion: 2018,
@@ -18,7 +16,7 @@ module.exports = {
             impliedStrict: true
         }
     },
-    plugins: ['react'],
+    // plugins: ['react'],
     rules: {
         // "prettier/prettier": "error",
         indent: ['error', 4], // 缩进使用4个空格
@@ -26,7 +24,6 @@ module.exports = {
         'keyword-spacing': ['error', {after: true}], // 关键字后面要加空格
         'linebreak-style': ['error', 'unix'],
         quotes: ['error', 'single'], // 强制使用单引号
-
         eqeqeq: 'error',
         'block-scoped-var': 'error',
         'comma-dangle': 'off',
