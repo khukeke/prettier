@@ -1,9 +1,9 @@
 {
-    "singleQuote": true,
-    "bracketSpacing": false,
+    "semi": true,
     "tabWidth": 4,
-    "printWidth": 100,
+    "bracketSpacing": false,
+    "arrowParens": "avoid",
     "trailingComma": none,
-    "jsxBracketSameLine": false,
-    "parser": "babylon"
+    "endOfLine": "auto",
+    "singleQuote": true
 }
