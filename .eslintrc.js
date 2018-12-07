@@ -5,7 +5,7 @@ module.exports = {
         es6: true,
         node: true
     },
-    extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
+    extends: ['plugin:react/recommended', 'plugin:prettier/recommended', 'prettier/react'],
     parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'module',
@@ -24,7 +24,8 @@ module.exports = {
         quotes: ['error', 'single'], // 强制使用单引号
         semi: ['error', 'always'],
         'react/jsx-uses-react': 'error',
-        'react/jsx-uses-vars': 'error'
+        'react/jsx-uses-vars': 'error',
+        'react/button-has-type': ['error']
     },
     settings: {
         react: {

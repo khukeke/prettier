@@ -22,7 +22,7 @@
         "lint"
     ],
     "lint-staged": {
-        "**/*.{js,json,css,less,scss,md}": [
+        "**/*.{js,jsx,json,css,less,scss,md}": [
             "prettier --write",
             "git add"
         ],
