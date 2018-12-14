@@ -6,7 +6,10 @@ module.exports = {
         node: true
     },
     extends: [
+        'eslint:recommended',
         'plugin:react/recommended',
+        // './eslint-rule.js',
+        // './eslint-rule.js'
     ],
     parserOptions: {
         ecmaVersion: 2018,
@@ -16,7 +19,7 @@ module.exports = {
             impliedStrict: true
         }
     },
-    // plugins: ['react'],
+    plugins: ['react'],
     rules: {
         // "prettier/prettier": "error",
         indent: ['error', 4], // 缩进使用4个空格
@@ -26,6 +29,7 @@ module.exports = {
         quotes: ['error', 'single'], // 强制使用单引号
         eqeqeq: 'error',
         'block-scoped-var': 'error',
+        "operator-linebreak": ["error", "before", {"overrides": {"?": "before", ":": "before"}}],
         'comma-dangle': 'off',
         'no-eval': 'warn',
         'no-console': 'warn',
@@ -50,7 +54,6 @@ module.exports = {
 
         semi: ['error', 'always'], // 始终都要有分号
         'operator-linebreak': ['error', 'before'], // 换行时换行符放在操作符前面
-        'max-len': ['error', 120] // 最大长度120
     },
     settings: {
         react: {
